@@ -13,7 +13,7 @@ const App = ({ Component }) => {
         <div>
             <Head>
                 {/* <meta charset="utf-8" /> */}
-                <title>hohohohohoaa</title>
+                <title>hohohohohoaaaa</title>
             </Head>
             <Component />
             이건 공통
