@@ -1,0 +1,43 @@
+@charset 'utf-8';
+
+.content {
+    display: flex;
+    margin: -5px;
+}
+
+.content .col {
+    flex: 1 1 auto;
+    width: calc(33% - 5px);
+    margin: 5px;
+    border: 1px solid #ddd;
+    padding:20px;
+    
+}
+
+.content .col.login {
+    flex: 0 1 auto;
+    width: calc(200px - 5px);
+    padding:0;
+}
+
+.content .col.login > form {
+    padding:20px;
+}
+
+
+
+
+.main-menu {padding: 20px;;}
+
+
+/* @media (max-width:768px) {
+    .content {flex-wrap: wrap;}
+    .content .col {width: calc(50% - 5px);}
+} */
+
+
+@media (max-width:450px) {
+    .content {flex-wrap: wrap;}
+    .content .col {width: calc(100% - 5px);}
+}
+
