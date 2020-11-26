@@ -1,20 +1,14 @@
 import React, { useState, useCallback } from 'react'
 import Link from 'next/link'
-
+import PropTypes from 'prop-types'
+import { useInput } from '../components/hooks/useInput'
 
 const Login = ({ setIsLoggedIn }) => {
 
-    const [ id, setId ] = useState('');
-    const [ password, setPassword ] = useState('');
+    const [ id, ChangeId ] = useInput('');
+    const [ password, ChangePassword ] = useInput('');
 
-    const handleChange = useCallback((e) => {
-        setId(e.target.value)
-    }, [])
-
-    const handleChangePassword = useCallback((e) => {
-        setPassword(e.target.value)
-    })
-
+    
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
         setIsLoggedIn(true)
@@ -28,17 +22,22 @@ const Login = ({ setIsLoggedIn }) => {
         <form>
             <div>
                 <label for="user-id">id</label><br />
-                <input name="user-id" value={id} onChange={handleChange} required />
+                <input name="user-id" value={id} onChange={ChangeId} required />
             </div>
             <div>
                 <label for="user-password">password</label><br />
-                <input name="user-password" value={password} onChange={handleChangePassword} required />
+                <input name="user-password" value={password} onChange={ChangePassword} required />
             </div>
            
             <button type="submit" onClick={handleSubmit}>login</button>
             <Link href="signup"><button>signup</button></Link>
         </form>
     )
+}
+
+
+Login.PropTypes = {
+    setIsLoggedIn: PropTypes.func.isRequired,
 }
 
 export default Login
