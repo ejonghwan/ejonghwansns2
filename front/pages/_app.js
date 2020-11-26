@@ -6,6 +6,8 @@ import './css/applayout.css'
 
 // 전페이지 공통되는건 모두 _App에 넣는다 
 
+import wrapper from '../store/configureStore'
+
 
 const App = ({ Component }) => {
     return (
@@ -26,4 +28,4 @@ App.propTypes = {
 }
 
 
-export default App;
+export default wrapper.withRedux(App);
