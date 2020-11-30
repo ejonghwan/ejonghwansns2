@@ -8,6 +8,11 @@ import UserProfile from './UserProfile'
 import Login from './Login'
 
 
+//redux
+import { useSelector } from 'react-redux';
+
+
+
 
 // style는 이렇게
 // const Button = styled.div `
@@ -25,7 +30,9 @@ import Login from './Login'
 
 const AppLayout = ({ children }) => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    // const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
+    // console.log(isLoggedIn)
 
     return (
         <div>
@@ -51,7 +58,7 @@ const AppLayout = ({ children }) => {
 
             <section className="content">
                 <div className="col login">
-                    { isLoggedIn ? <UserProfile setIsLoggedIn={setIsLoggedIn}/> : <Login setIsLoggedIn={setIsLoggedIn} /> }
+                    { isLoggedIn ? <UserProfile /*setIsLoggedIn={setIsLoggedIn}*/ /> : <Login /*setIsLoggedIn={setIsLoggedIn} */ /> }
                 </div>
                 <div className="col conts">
                     {children}

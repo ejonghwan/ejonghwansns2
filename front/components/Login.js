@@ -3,15 +3,22 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import { useInput } from '../components/hooks/useInput'
 
+
+//redux
+import { useDispatch } from 'react-redux'
+import { loginAction } from '../reducers/index'
+
+
 const Login = ({ setIsLoggedIn }) => {
 
+    const dispatch = useDispatch();
     const [ id, ChangeId ] = useInput('');
     const [ password, ChangePassword ] = useInput('');
 
     
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
-        setIsLoggedIn(true)
+        dispatch(loginAction({ id, password }))
         console.log(id, password)
 
     }, [id, password])
