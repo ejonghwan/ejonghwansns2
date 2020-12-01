@@ -4,7 +4,7 @@ import { Card, Avatar } from 'antd'
 
 //redux 
 import { useDispatch } from 'react-redux'
-import { logoutAction } from '../reducers/index'
+import { logoutAction } from '../reducers/user'
 
 const UserProfile = ({ setIsLoggedIn }) => {
 

@@ -6,6 +6,8 @@ import './css/applayout.css'
 
 // 전페이지 공통되는건 모두 _App에 넣는다 
 
+
+//redux
 import wrapper from '../store/configureStore'
 
 

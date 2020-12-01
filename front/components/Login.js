@@ -6,7 +6,7 @@ import { useInput } from '../components/hooks/useInput'
 
 //redux
 import { useDispatch } from 'react-redux'
-import { loginAction } from '../reducers/index'
+import { loginAction } from '../reducers/user'
 
 
 const Login = ({ setIsLoggedIn }) => {
