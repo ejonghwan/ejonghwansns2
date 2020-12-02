@@ -37,7 +37,7 @@ export const addPost = {
 }
 
 
-//가짜 객체 바꿀 액션
+//가짜 객체 바꿀 액션 (서버에서 받아올 값? 사용자가 입력하는 값?)
 const dummyPost = {
     User: {
         id: 1,

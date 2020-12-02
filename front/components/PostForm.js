@@ -11,15 +11,19 @@ const PostForm = () => {
     const [text, setText] = useState('')
     const imageInput = useRef()
 
+
+    //아레아창
     const onChangeText = useCallback((e) => {
         setText(e.target.value)
         }, [])
 
+    // 게시물 등록버튼
     const onSubmit = useCallback(() => {
         dispatch(addPost)
         setText('')
     }, [])
 
+    // 이미지 버튼 클릭
     const imageUpload = useCallback((e) => {
         imageInput.current.click();
         

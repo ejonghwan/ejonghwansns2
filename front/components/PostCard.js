@@ -19,6 +19,7 @@ const PostCard = ({ post }) => {
             <Card
                 cover={post.Images[0] && <PostImages images={post.Image} />}
                 actions={[
+                    //icon
                     <RetweetOutlined key="retweet" />,
                     <HeartOutlined key="heart" />,
                     <MessageOutlined key="comment" />,
@@ -29,7 +30,7 @@ const PostCard = ({ post }) => {
                                     <Button >modify</Button>
                                     <Button type="danger">delete</Button>
                                 </>
-                            ) : <Button>sin</Button>
+                            ) : <Button>report</Button>
                             }
                             
                         </Button.Group>
