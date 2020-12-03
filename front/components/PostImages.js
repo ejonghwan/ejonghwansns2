@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const PostImages = ({images}) => {
     return (
@@ -7,5 +8,9 @@ const PostImages = ({images}) => {
         </div>
     );
 };
+
+PostImages.PropTypes = {
+    images: PropTypes.arrayOf(PropTypes.object)
+}
 
 export default PostImages;
