@@ -30,7 +30,7 @@ const PostCard = ({ post }) => {
         <div style={{marginBottom: "20px",}}>
 
             <Card
-                cover={post.Images[0] && <PostImages images={post.Image} />}
+                cover={post.Images[0] && <PostImages images={post.Images} />}
                 actions={[
                     //icon
                     <RetweetOutlined key="retweet" />,
