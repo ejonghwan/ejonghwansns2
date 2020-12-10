@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/Link'
 import { Menu, Input } from 'antd'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 import UserProfile from './UserProfile'
 import Login from './Login'
@@ -28,6 +28,13 @@ import { useSelector } from 'react-redux';
 // `
 
 
+const Global = createGlobalStyle `
+    .ant-row {margin-right: 0 !important; margin-left: 0 !important;}
+    .ant-col:first-child {padding-left: 0 !important;}
+    .ant-col:last-child {padding-right: 0 !important;}
+`
+
+
 const AppLayout = ({ children }) => {
 
     // const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -36,6 +43,7 @@ const AppLayout = ({ children }) => {
 
     return (
         <div>
+            <Global />
             {/* <Button>asdasd</Button> */}
             <Menu mode="horizontal" className="main-menu">
                 <Menu.Item>
