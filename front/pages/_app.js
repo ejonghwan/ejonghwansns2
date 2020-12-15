@@ -6,6 +6,7 @@ import './css/applayout.css'
 
 // 전페이지 공통되는건 모두 _App에 넣는다 
 
+import widthReduxSaga from 'next-redux-saga'
 
 //redux
 import wrapper from '../store/configureStore'
@@ -30,4 +31,4 @@ App.propTypes = {
 }
 
 
-export default wrapper.withRedux(App);
+export default wrapper.withRedux(widthReduxSaga(App));
