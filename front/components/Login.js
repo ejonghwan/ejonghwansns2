@@ -6,7 +6,7 @@ import { useInput } from '../components/hooks/useInput'
 
 //redux
 import { useDispatch } from 'react-redux'
-import { loginAction } from '../reducers/user'
+import { loginSuccessAction } from '../reducers/user'
 
 
 const Login = ({ setIsLoggedIn }) => {
@@ -18,7 +18,7 @@ const Login = ({ setIsLoggedIn }) => {
     
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
-        dispatch(loginAction({ id, password }))
+        dispatch(loginSuccessAction({ id, password }))
         console.log(id, password)
 
     }, [id, password])

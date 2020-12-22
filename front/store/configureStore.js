@@ -2,7 +2,7 @@ import { createWrapper } from 'next-redux-wrapper'
 import { createStore, applyMiddleware, compose,  } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import reducer from '../reducers/index'
+import reducer from '../reducers'
 
 // saga
 import createSagaMiddlware from 'redux-saga';
@@ -18,7 +18,7 @@ const configureStore = () => {
     const store = createStore(reducer, enhancer)
     store.sagaTask = sagaMiddlware.run(rootSaga)
     return store
-}
+} 
 
 
 const wrapper = createWrapper(configureStore, { 
