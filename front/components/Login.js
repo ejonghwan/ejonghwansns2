@@ -2,16 +2,17 @@ import React, { useState, useCallback } from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import { useInput } from '../components/hooks/useInput'
-
+import { ButtonWrapper, Button } from 'antd'
 
 //redux
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { loginSuccessAction } from '../reducers/user'
 
 
 const Login = ({ setIsLoggedIn }) => {
 
     const dispatch = useDispatch();
+    const { isLoggingIn } = useSelector((state) => state.user)
     const [ id, ChangeId ] = useInput('');
     const [ password, ChangePassword ] = useInput('');
 
@@ -36,8 +37,10 @@ const Login = ({ setIsLoggedIn }) => {
                 <input name="user-password" value={password} onChange={ChangePassword} required />
             </div>
            
-            <button type="submit" onClick={handleSubmit}>login</button>
-            <Link href="signup"><button>signup</button></Link>
+            <div>          
+                <Button type="primary" htmlType="submit" onClick={handleSubmit} loading={isLoggingIn}>login</Button>
+                <Link href="signup"><a><Button>signup</Button></a></Link>
+            </div>
         </form>
     )
 }
